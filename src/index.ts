@@ -18,7 +18,7 @@ export default (ctx, options) => {
 
 	ctx.modifyBuildTempFileContent(({tempFiles}) => {
 		console.log('');
-		Logx.start('修改通过 link 方式引入的组件引用路径')
+		Logx.start('修改 link 组件引用路径')
 		for (const key in tempFiles) {
 			const { usingComponents } = tempFiles[key].config
 			if (usingComponents && Object.keys(usingComponents).length > 0) {
@@ -43,7 +43,7 @@ export default (ctx, options) => {
 				}
 			}
 		}
-		Logx.end('修改通过 link 方式引入的组件引用路径')
+		Logx.end('修改 link 组件引用路径')
 		console.log('');
 	})
 
