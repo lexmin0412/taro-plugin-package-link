@@ -1,6 +1,6 @@
 {
   "name": "taro-plugin-package-link",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "link适配",
   "main": "index.js",
   "scripts": {
@@ -49,6 +49,7 @@
     "get-port": "^5.1.1",
     "glob": "^7.1.6",
     "http-proxy-middleware": "^1.0.3",
-    "path-to-regexp": "^6.1.0"
+    "path-to-regexp": "^6.1.0",
+		"@tarox/helper-node": "1.0.0-alpha.17"
   }
 }
