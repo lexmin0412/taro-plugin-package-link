@@ -18,15 +18,13 @@ export default (ctx, options) => {
 		for (const key in tempFiles) {
 			if (Object.hasOwnProperty.call(tempFiles, key)) {
 				const usingComponents = tempFiles[key].config['usingComponents'];
-				console.log('usingComponents', usingComponents);
 				if (usingComponents) {
 					for (const componentName in usingComponents) {
 						if (Object.hasOwnProperty.call(usingComponents, componentName)) {
 							let componentPath = usingComponents[componentName];
-							console.log('componentPath', componentPath)
 							const identiIndex = componentPath.indexOf(libName)
 							if (identiIndex > -1) {
-								usingComponents[componentName] = `../../npm/${libName}/${componentPath.slice(identiIndex + libName.length)}`
+								usingComponents[componentName] = `${componentPath.slice(0, identiIndex)}/npm/${libName}/${componentPath.slice(identiIndex + libName.length)}`
 							}
 						}
 					}
@@ -38,7 +36,7 @@ export default (ctx, options) => {
 	ctx.modifyBuildAssets(({assets}) => {
 		console.log('修改link ui lib输出路径');
 		Object.keys(assets).forEach((srcKey) => {
-			const identifierIndex = srcKey.indexOf('taro-xui')
+			const identifierIndex = srcKey.indexOf(libName)
 			if (identifierIndex === -1) {
 				return
 			}
