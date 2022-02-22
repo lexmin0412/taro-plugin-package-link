@@ -33,3 +33,7 @@ module.exports = {
 	]
 }
 ```
+
+## ChangeLog
+
+[更新日志](https://github.com/lexmin0412/taro-plugin-package-link/blob/main/CHANGELOG.md)
