@@ -12,8 +12,8 @@ export default (ctx, options) => {
 	ctx.modifyBuildTempFileContent(({tempFiles}) => {
 		Logx.start('修改通过 link 方式引入的组件引用路径')
 		for (const key in tempFiles) {
-			const usingComponents = tempFiles[key].config
-			if (usingComponents) {
+			const { usingComponents } = tempFiles[key].config
+			if (usingComponents && Object.keys(usingComponents).length > 0) {
 				for (const componentName in usingComponents) {
 					let componentPath = usingComponents[componentName];
 					const identiIndex = componentPath.indexOf(libName)
