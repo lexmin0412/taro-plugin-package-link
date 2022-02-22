@@ -21,3 +21,15 @@ module.exports = {
 	]
 }
 ```
+
+或传入数组：
+
+```js
+module.exports = {
+	plugins: [
+		"taro-plugin-package-link", {
+			libs: ['taro-xui']
+		}
+	]
+}
+```
