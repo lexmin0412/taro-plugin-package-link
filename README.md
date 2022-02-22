@@ -1,6 +1,6 @@
 # taro-plugin-package-link
 
-link适配。
+通过 modifyBuildTempFileContent / modifyBuildAssets 修改构建产物，解决使用 npm/yarn/pnpm link 之后导致构建后的组件引入/输出路径错误的问题。
 
 ## Installation
 
