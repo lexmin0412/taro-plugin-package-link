@@ -12,10 +12,12 @@ exports.default = (ctx, options) => {
         for (const key in tempFiles) {
             if (Object.hasOwnProperty.call(tempFiles, key)) {
                 const usingComponents = tempFiles[key].config['usingComponents'];
+                console.log('usingComponents', usingComponents);
                 if (usingComponents) {
                     for (const componentName in usingComponents) {
                         if (Object.hasOwnProperty.call(usingComponents, componentName)) {
                             let componentPath = usingComponents[componentName];
+                            console.log('componentPath', componentPath);
                             const identiIndex = componentPath.indexOf(libName);
                             if (identiIndex > -1) {
                                 usingComponents[componentName] = `../../npm/${libName}/${componentPath.slice(identiIndex + libName.length)}`;
